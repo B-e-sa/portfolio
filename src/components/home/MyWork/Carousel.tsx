@@ -49,7 +49,7 @@ const Carousel = (props: Cards) => {
     title = 'This portifolio!'
     text = 'This portifolio was made using React and Typescript'
     alt = 'my-portifolio'
-    link = ''
+    link = 'https://github.com/B-e-sa/portifolio'
   }
 
   return (
