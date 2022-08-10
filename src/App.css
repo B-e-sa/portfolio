@@ -5,10 +5,6 @@
 
 ::-webkit-scrollbar-thumb { background-color: white; }
 
-button { align-self: center; }
-
-hr {width: 50vw;}
-
 @media screen and (max-width: 730px) {
     #cat,
     #about-me-image-container,

@@ -33,19 +33,23 @@ const Carousel = (props: Cards) => {
   let title: string = ''
   let text: string = ''
   let alt: string = ''
+  let link: string = ''
 
   if (count === 0) {
     title = 'Weather Forecast'
     text = 'An weather forecast app, the infos are gathered from the OpenWeather API'
     alt = 'weather-project'
+    link = 'https://github.com/B-e-sa/react-weather'
   } else if (count === 1) {
     title = 'Pokedex'
     text = 'An interactible pokedex interface build with RESTful Pokémon API'
     alt = 'pokedex-project'
+    link = 'https://github.com/B-e-sa/API-Pokedex'
   } else {
     title = 'This portifolio!'
     text = 'This portifolio was made using React and Typescript'
     alt = 'my-portifolio'
+    link = ''
   }
 
   return (
