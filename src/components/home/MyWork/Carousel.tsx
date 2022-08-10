@@ -57,7 +57,7 @@ const Carousel = (props: Cards) => {
       <div id="carousel-content">
         <div id="carousel-imgs">
           <img src={leftArrow} onClick={before} className='arrow' alt="left-arrow" />
-          <img src={props.cards[atualCard]} className='work-image' draggable='false' alt={alt} />
+          <a href={link}><img src={props.cards[atualCard]} className='work-image' draggable='false' alt={alt} /></a>
           <img src={rightArrow} onClick={next} className='arrow' alt="right-arrow" />
         </div>
         <div id="carousel-info">
