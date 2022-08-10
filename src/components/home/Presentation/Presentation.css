@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+#presentation {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+}
+
+#presentation-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    width: 100vw;
+}
+
+#cat-tail {
+    align-self: flex-end;
+    transform-origin: bottom left;
+    margin-left: 2px;
+    animation: tail-move 4s linear infinite alternate;
+}
+
+@keyframes tail-move {
+    0% { transform: rotate(-8deg); }
+    100% { transform: rotate(15deg) }
+}
+
+#my-name {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 100pt;
+}
+
+#developer {
+    font-size: 30pt;
+    color: rgb(184, 182, 182);
+    align-self: flex-end;
+}
+

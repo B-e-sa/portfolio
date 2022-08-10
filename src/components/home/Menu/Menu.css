@@ -1,0 +1,35 @@
+#side-bar {
+    position: sticky;
+    top: 0;
+}
+
+#menu-icon {
+    position: absolute;
+    filter: invert(100%);
+    width: 35px;
+    margin: 25px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+#side-bar-navigation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    color: white;
+    font-size: 12pt;
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    margin: 70px 25px 25px 25px;
+    animation: appear 0.5s linear;
+}
+
+@keyframes appear {
+    0% {color: black;}
+    100% {}
+}
+
+#side-bar-navigation p {
+    margin: 5px 0 5px 0;
+}

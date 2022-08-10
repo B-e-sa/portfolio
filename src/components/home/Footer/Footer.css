@@ -1,0 +1,10 @@
+#linkedin, #github { width: 45px; }
+
+footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 120px;
+}
+
+#logos-container img { margin: 0 10px 25px 10px; }

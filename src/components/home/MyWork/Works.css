@@ -1,0 +1,15 @@
+.media-work {
+    width: 250px;
+}
+
+#media-my-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#media-my-work p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,43 @@
+::-webkit-scrollbar {
+    background-color: black;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb { background-color: white; }
+
+button { align-self: center; }
+
+hr {width: 50vw;}
+
+@media screen and (max-width: 730px) {
+    #cat,
+    #about-me-image-container,
+    #carousel-content,
+    #light {
+        display: none;
+    }
+    #about-info {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+    #about-me-container {
+        align-items: unset;
+    }
+    #side-bar-navigation {
+        flex-direction: row;
+        font-size: 15pt;
+        margin: 30px 0 0 70px;
+    }
+    #side-bar-navigation p {
+        margin: 0 5px 0 5px;
+        border: 1px solid white;
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 730px) {
+    .media-work,
+    #media-my-work p {
+        display: none;
+    }
+}

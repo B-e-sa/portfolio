@@ -1,0 +1,51 @@
+#about-me-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+    height: 370px;
+}
+
+#about-me-content {
+    display: flex;
+    justify-content: center;
+}
+
+#light {
+    position: absolute;
+    width: 70px;
+    left: 90px;
+    top: -8px;
+    animation: twinkle 1s linear infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {  filter: opacity(100%); }
+    100% { filter: opacity(20%); }
+}
+
+#about-me-image-container {
+    width: 250px;
+    position: relative;
+}
+
+#about-me-image { width: 250px; }
+
+#about-info {
+    width: 500px;
+    margin-left: 50px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#about-info h2 { font-size: 25pt; }
+
+#about-info p {
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+
+#comment {
+    margin-top: 10px;
+    font-size: 15pt;
+    color: rgb(133, 133, 133);
+}
