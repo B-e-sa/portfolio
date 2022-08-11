@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import './Carousel.css'
 import leftArrow from '../../../assets/buttons/left-arrow.png'
 import rightArrow from '../../../assets/buttons/right-arrow.png'
@@ -46,10 +46,10 @@ const Carousel = (props: Cards) => {
     alt = 'pokedex-project'
     link = 'https://github.com/B-e-sa/API-Pokedex'
   } else {
-    title = 'This portifolio!'
-    text = 'This portifolio was made using React and Typescript'
-    alt = 'my-portifolio'
-    link = 'https://github.com/B-e-sa/portifolio'
+    title = 'This portfolio!'
+    text = 'This portfolio was made using React and Typescript'
+    alt = 'my-portfolio'
+    link = 'https://github.com/B-e-sa/portfolio'
   }
 
   return (

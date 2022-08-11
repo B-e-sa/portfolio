@@ -1,11 +1,11 @@
 import Carousel from './Carousel'
 import Works from './Works'
 import './MyWork.css'
-import portifolio from '../../../assets/projects/weather-project.png'
+import weather from '../../../assets/projects/weather-project.png'
 import pokedex from '../../../assets/projects/pokedex.png'
-import weather from '../../../assets/projects/portifolio.png'
+import portfolio from '../../../assets/projects/portfolio.png'
 
-const cards: string[] = [`${portifolio}`, `${pokedex}`, `${weather}`]
+const cards: string[] = [`${weather}`, `${pokedex}`, `${portfolio}`]
 
 const MyWork = () => {
     return (

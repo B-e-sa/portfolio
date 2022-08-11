@@ -1,5 +1,5 @@
 import './Works.css'
-import portifolio from '../../../assets/projects/portifolio.png'
+import portfolio from '../../../assets/projects/portfolio.png'
 import pokedex from '../../../assets/projects/pokedex.png'
 import weather from '../../../assets/projects/weather-project.png'
 
@@ -7,8 +7,8 @@ const Works = () => {
   return (
     <div id='media-my-work'>
       <p>You can click on the images to see more</p>
-      <a href="https://github.com/B-e-sa/portifolio" target={'_blank'}>
-        <img src={portifolio} className='media-work' alt="my-portifolio" />
+      <a href="https://github.com/B-e-sa/portfolio" target={'_blank'}>
+        <img src={portfolio} className='media-work' alt="my-portifolio" />
       </a>
       <a href="https://github.com/B-e-sa/react-weather" target={'_blank'}>
         <img src={pokedex} className='media-work' alt="weather-project" />
