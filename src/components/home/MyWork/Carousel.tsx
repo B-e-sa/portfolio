@@ -32,7 +32,7 @@ const Carousel = (props: Cards) => {
 
   const before = (): void => {
     if (atualCard === 0) {
-      setAtualCard(2)
+      setAtualCard(props.cards.length - 1)
     } else {
       setAtualCard(atualCard - 1)
     }
