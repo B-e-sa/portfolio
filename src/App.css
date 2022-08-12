@@ -8,7 +8,6 @@
 @media screen and (max-width: 730px) {
     #cat,
     #about-me-image-container,
-    #carousel-content,
     #light {
         display: none;
     }
@@ -28,12 +27,5 @@
         margin: 0 5px 0 5px;
         border: 1px solid white;
         padding: 5px;
-    }
-}
-
-@media screen and (min-width: 730px) {
-    .media-work,
-    #media-my-work p {
-        display: none;
     }
 }
