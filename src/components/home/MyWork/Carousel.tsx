@@ -1,70 +1,69 @@
-import { useState } from "react"
-import './Carousel.css'
-import leftArrow from '../../../assets/buttons/left-arrow.png'
-import rightArrow from '../../../assets/buttons/right-arrow.png'
+import { useState, useEffect } from "react"
+import "./Carousel.css"
+import leftArrow from "../../../assets/buttons/left-arrow.png"
+import rightArrow from "../../../assets/buttons/right-arrow.png"
+import texts from "./carouselTexts"
 
 interface Cards {
   cards: string[]
 }
 
-
 const Carousel = (props: Cards) => {
 
   const [atualCard, setAtualCard] = useState(0)
+  const [layoutWidth, setLayoutWidth] = useState(window.innerWidth > 730)
 
-  let count: number = atualCard
+  const updateLayout = (): void => {
+    setLayoutWidth(window.innerWidth > 730);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateLayout)
+    return () => window.removeEventListener("resize", updateLayout);
+  }, [])
 
   const next = (): void => {
-    if (count === 2) {
-      setAtualCard(count = 0)
+    if (atualCard === props.cards.length - 1) {
+      setAtualCard(0)
     } else {
       setAtualCard(atualCard + 1)
     }
   }
 
   const before = (): void => {
-    if (count === 0) {
-      setAtualCard(count = 2)
+    if (atualCard === 0) {
+      setAtualCard(2)
     } else {
       setAtualCard(atualCard - 1)
     }
   }
 
-  let title: string = ''
-  let text: string = ''
-  let alt: string = ''
-  let link: string = ''
-
-  if (count === 0) {
-    title = 'Weather Forecast'
-    text = 'An weather forecast app, the infos are gathered from the OpenWeather API'
-    alt = 'weather-project'
-    link = 'https://github.com/B-e-sa/react-weather'
-  } else if (count === 1) {
-    title = 'Pokedex'
-    text = 'An interactible pokedex interface build with RESTful Pokémon API'
-    alt = 'pokedex-project'
-    link = 'https://github.com/B-e-sa/API-Pokedex'
-  } else {
-    title = 'This portfolio!'
-    text = 'This portfolio was made using React and Typescript'
-    alt = 'my-portfolio'
-    link = 'https://github.com/B-e-sa/portfolio'
-  }
-
   return (
-    <div id='carousel-container'>
-      <div id="carousel-content">
-        <div id="carousel-imgs">
-          <img src={leftArrow} onClick={before} className='arrow' alt="left-arrow" />
-          <a href={link} target="_blank"><img src={props.cards[atualCard]} className='work-image' draggable='false' alt={alt} /></a>
-          <img src={rightArrow} onClick={next} className='arrow' alt="right-arrow" />
+    <div>
+      {layoutWidth ?
+        <div id="carousel-container">
+          <div id="carousel-imgs">
+            <img src={leftArrow} onClick={before} className="arrow" alt="left-arrow" />
+            <a href={texts[atualCard].link} target="_blank">
+              <img src={props.cards[atualCard]} className="work-image" draggable="false" alt={texts[atualCard].alt} />
+            </a>
+            <img src={rightArrow} onClick={next} className="arrow" alt="right-arrow" />
+          </div>
+          <div id="carousel-info">
+            <h1>{texts[atualCard].title}</h1>
+            <p>{texts[atualCard].text}</p>
+          </div>
         </div>
-        <div id="carousel-info">
-          <h1>{title}</h1>
-          <p>{text}</p>
+        :
+        <div id="media-my-work">
+          <p>You can click on the images to see more</p>
+          {(props.cards).map((item: string, i: number) =>
+            <a href={texts[i].link} target="_blank">
+              <img src={item} alt={texts[i].alt} className="work-image" draggable="false"></img>
+            </a>
+          )}
         </div>
-      </div>
+      }
     </div>
   )
 }

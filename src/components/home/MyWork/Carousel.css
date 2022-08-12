@@ -1,4 +1,4 @@
-#carousel-content {
+#carousel-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -10,6 +10,17 @@
     align-items: center;
 }
 
+.arrow {
+    width: 50px;
+    cursor: pointer;
+}
+
+.work-image {
+    width: 280px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 #carousel-info {
     display: flex;
     flex-direction: column;
@@ -18,4 +29,27 @@
     font-size: 20pt;
     margin-top: 20px;
     font-family: 'Raleway', sans-serif;
+}
+
+.media-work {
+    width: 250px;
+}
+
+#media-my-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#media-my-work p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.arrow:active {
+    filter: invert(50%);
+}
+
+#work-image-container {
+    display: flex;
 }
