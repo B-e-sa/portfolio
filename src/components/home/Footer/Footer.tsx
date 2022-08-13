@@ -1,6 +1,6 @@
 import './Footer.css'
-import git from '../../../assets/buttons/linkedin.png'
-import linkedin from '../../../assets/buttons/github.png'
+import linkedin from '../../../assets/buttons/linkedin.png'
+import git from '../../../assets/buttons/github.png'
 
 const Footer = () => {
     return (
