@@ -87,7 +87,9 @@ const Carousel = (props: Cards) => {
         // if screen width <= 730
         <div id="media-my-work">
           <p>You can click on the images to see more</p>
-          // for each card(item), an anchor with the image is rendered
+
+          /* for each card(item), an anchor with the image is rendered */ 
+
           {(props.cards).map((item: string, i: number) =>
             <a href={texts[i].link} target="_blank">
               <img src={item} alt={texts[i].alt} className="work-image" draggable="false"></img>
