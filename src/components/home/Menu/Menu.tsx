@@ -5,14 +5,14 @@ import menu from '../../../assets/buttons/menu.svg'
 const Menu = () => {
 
     const [toggleButton, setToggleButton] = useState('')
-    const [toggleVisibler, setToggleVisibler] = useState(false)
+    const [toggleVisible, setToggleVisible] = useState(false)
 
     const toggle = (): void => {
-        if (toggleVisibler === false) {
-            setToggleVisibler(true)
+        if (toggleVisible === false) {
+            setToggleVisible(true)
             setToggleButton('rotate(90deg)')
         } else {
-            setToggleVisibler(false)
+            setToggleVisible(false)
             setToggleButton('')
         }
     }
@@ -22,7 +22,7 @@ const Menu = () => {
             <div id='menu'>
                 <img src={menu} alt="menu" id='menu-icon' onClick={toggle} style={{ transform: toggleButton }} draggable='false'/>
             </div>
-            {toggleVisibler ?
+            {toggleVisible ?
                 <nav id='side-bar-navigation'>
                     <p><a href='#about-me-container'>About me</a></p>
                     <p><a href="#my-work">Projects</a></p>
