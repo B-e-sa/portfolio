@@ -31,3 +31,8 @@ hr {
 }
 
 button { align-self: center; }
+
+.non-draggable {
+  -webkit-user-drag: none;
+  user-select: none;
+}

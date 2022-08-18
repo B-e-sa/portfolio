@@ -8,8 +8,8 @@ const AboutMe = () => {
             <hr />
             <div id='about-me-content'>
                 <div id='about-me-image-container'>
-                    <img id='light' src={ligth} alt="light-bulb" draggable='false' />
-                    <img id='about-me-image' src={devCat} alt="dev-cat" draggable='false' /></div>
+                    <img id='light' src={ligth} alt="light-bulb" className='non-draggable'/>
+                    <img id='about-me-image' src={devCat} alt="dev-cat" className='non-draggable'/></div>
                 <div id='about-info'>
                     <h2> About me </h2>
                     <div>

@@ -20,7 +20,7 @@ const Menu = () => {
     return (
         <div id='side-bar'>
             <div id='menu'>
-                <img src={menu} alt="menu" id='menu-icon' onClick={toggle} style={{ transform: toggleButton }} draggable='false'/>
+                <img src={menu} alt="menu" id='menu-icon' className='non-draggable' onClick={toggle} style={{ transform: toggleButton }}/>
             </div>
             {toggleVisible ?
                 <nav id='side-bar-navigation'>

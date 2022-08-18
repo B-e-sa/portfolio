@@ -18,7 +18,6 @@ const Carousel = (props: Cards) => {
   }
 
   useEffect(() => {
-    console.log("oi")
     window.addEventListener("resize", updateLayout)
     return () => window.removeEventListener("resize", updateLayout);
   }, [])
@@ -46,11 +45,11 @@ const Carousel = (props: Cards) => {
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">
-            <img src={leftArrow} onClick={before} className="arrow" alt="left-arrow" draggable='false'/>
+            <img src={leftArrow} onClick={before} className="arrow non-draggable" alt="left-arrow"/>
             <a href={texts[atualCard].link} target="_blank">
-              <img src={props.cards[atualCard]} className="work-image" draggable="false" alt={texts[atualCard].alt} />
+              <img src={props.cards[atualCard]} className="work-image" alt={texts[atualCard].alt} />
             </a>
-            <img src={rightArrow} onClick={next} className="arrow" alt="right-arrow" draggable='false'/>
+            <img src={rightArrow} onClick={next} className="arrow non-draggable" alt="right-arrow"/>
           </div>
           <div id="carousel-info">
             <h1>{texts[atualCard].title}</h1>
@@ -62,7 +61,7 @@ const Carousel = (props: Cards) => {
           <p>You can click on the images to see more</p>
           {(props.cards).map((item: string, i: number) =>
             <a href={texts[i].link} target="_blank" key={key++}>
-              <img src={item} alt={texts[i].alt} className="work-image" draggable="false"></img>
+              <img src={item} alt={texts[i].alt} className="work-image"></img>
             </a>
           )}
         </div>
