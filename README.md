@@ -48,6 +48,12 @@ const Carousel = (props: Cards) => {
     return () => window.removeEventListener("resize", updateLayout);
   }, [])
 
+  // i was noticing a delay between images, so that loop will load them before they are rendered
+  for (const card of props.cards) {
+    const imageElement = new Image();
+    imageElement.src = card;
+  }
+
   // if we try to go to the "next" image after the last one, we go back to the first image
   const next = (): void => {
     if (atualCard === props.cards.length - 1) {
