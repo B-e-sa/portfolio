@@ -6,11 +6,8 @@ import portfolio from '../../../assets/projects/portfolio.png'
 const cards: string[] = [`${weather}`, `${pokedex}`, `${portfolio}`]
 
 const MyWork = () => {
-
     return (
-        <div id='my work'>
-            <Carousel cards={cards} />
-        </div>
+        <Carousel cards={cards} />
     )
 }
 

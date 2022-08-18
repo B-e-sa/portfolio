@@ -22,6 +22,11 @@ const Carousel = (props: Cards) => {
     return () => window.removeEventListener("resize", updateLayout);
   }, [])
 
+  for (const card of props.cards) {
+    const imageElement = new Image();
+    imageElement.src = card;
+  }
+
   const next = (): void => {
     if (atualCard === props.cards.length - 1) {
       setAtualCard(0)
@@ -38,8 +43,6 @@ const Carousel = (props: Cards) => {
     }
   }
 
-  let key = 0
-
   return (
     <div>
       {layoutWidth ?
@@ -47,7 +50,7 @@ const Carousel = (props: Cards) => {
           <div id="carousel-imgs">
             <img src={leftArrow} onClick={before} className="arrow non-draggable" alt="left-arrow"/>
             <a href={texts[atualCard].link} target="_blank">
-              <img src={props.cards[atualCard]} className="work-image" alt={texts[atualCard].alt} />
+              <img src={props.cards[atualCard]} className="work-image" alt={texts[atualCard].alt} width="280" height="376"/>
             </a>
             <img src={rightArrow} onClick={next} className="arrow non-draggable" alt="right-arrow"/>
           </div>
@@ -60,8 +63,8 @@ const Carousel = (props: Cards) => {
         <div id="media-my-work">
           <p>You can click on the images to see more</p>
           {(props.cards).map((item: string, i: number) =>
-            <a href={texts[i].link} target="_blank" key={key++}>
-              <img src={item} alt={texts[i].alt} className="work-image"></img>
+            <a href={texts[i].link} target="_blank" key={item}>
+              <img src={item} alt={texts[i].alt} className="work-image" width="280" height="376"></img>
             </a>
           )}
         </div>
