@@ -29,7 +29,7 @@ const Menu = () => {
                     <p><a href="https://www.linkedin.com/in/joão-antônio-pereira-b4021b232/" target={'_blank'}>LinkedIn</a></p>
                     <p><a href="https://github.com/B-e-sa" target='blank'>GitHub</a></p>
                     <p><a href="mailto:joaospereira963@gmail.com">Contact me</a></p>
-                    <p><a href="https://www.svgrepo.com">Icons</a></p>
+                    <p><a href="https://www.svgrepo.com" target='blank'>Icons</a></p>
                 </nav>
                 :
                 <></>
