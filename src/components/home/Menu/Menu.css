@@ -3,11 +3,17 @@
     top: 0;
 }
 
+#theme-icon {
+    position: absolute;
+    cursor: pointer;
+    left: 70px;
+    top: 31px;
+}
+
 #menu-icon {
     position: absolute;
-    filter: invert(100%);
     width: 35px;
-    margin: 25px;
+    margin: 26px;
     transition: transform 0.5s;
     cursor: pointer;
 }
@@ -17,10 +23,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     position: absolute;
-    color: white;
     font-size: 12pt;
     font-family: 'Raleway', sans-serif;
-    background-color: black;
     margin: 70px 25px 25px 25px;
     animation: appear 0.5s linear;
 }

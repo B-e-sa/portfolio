@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    color: white;
     height: 370px;
 }
 

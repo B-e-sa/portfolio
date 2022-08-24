@@ -31,11 +31,10 @@
 #my-name {
     display: flex;
     flex-direction: column;
-    color: white;
     font-size: 100pt;
 }
 
-#developer {
+#my-name > p:nth-child(3n) {
     font-size: 30pt;
     color: rgb(184, 182, 182);
     align-self: flex-end;
