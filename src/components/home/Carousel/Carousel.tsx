@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react"
 import "./Carousel.css"
+import texts from "./carouselTexts"
 import leftArrow from "../../../assets/buttons/left-arrow.png"
 import rightArrow from "../../../assets/buttons/right-arrow.png"
-import texts from "./carouselTexts"
 import weather from '../../../assets/projects/weather-project.png'
 import pokedex from '../../../assets/projects/pokedex.png'
 import portfolio from '../../../assets/projects/portfolio.png'
@@ -26,11 +26,6 @@ const Carousel = () => {
 
   const cards = [`${weather}`, `${pokedex}`, `${portfolio}`]
 
-  for (const card of cards) {
-    const imageElement = new Image();
-    imageElement.src = card;
-  }
-
   const next = (): void => {
     if (atualCard === cards.length - 1) {
       setAtualCard(0)
@@ -49,6 +44,9 @@ const Carousel = () => {
 
   return (
     <div>
+      <link rel="preload" href={weather} as="image" />
+      <link rel="preload" href={pokedex} as="image" />
+      <link rel="preload" href={portfolio} as="image" />
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">

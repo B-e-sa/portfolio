@@ -12,9 +12,6 @@ const Menu = () => {
 
     const { theme, setTheme } = useContext(ThemeContext)
 
-    const imageElement = new Image();
-    imageElement.src = night
-
     const toggle = (): void => {
         if (toggleVisible === false) {
             setToggleVisible(true)
@@ -35,6 +32,8 @@ const Menu = () => {
 
     return (
         <div id='side-bar'>
+            <link rel="preload" href={night} as="image" />
+            <link rel="preload" href={menu} as="image" />
             <div id='menu'>
                 <img
                     id='theme-icon'
