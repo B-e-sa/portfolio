@@ -15,6 +15,9 @@
 
 To visit the app, use the **local** adress provided by Vite on the **terminal**
 
+## Why did i use React-Router and useContext (on theme change)?
+Well... for study purposes!
+
 # How it works?
 I didn't comment on the code, to leave it cleaner on github <br>
 But i will explain every complex component one by one!
@@ -25,13 +28,9 @@ But i will explain every complex component one by one!
 // importing an array that contains objects with the text, links and alts that we will use
 import texts from './carouselTexts'
 
-// the Carousel component will receive a props.card, that will contain the image sources in an array
-// example: ['../../../assets/projects/pokedex.png'], so we can iterate it and make the carousel dinamic
-interface Cards {
-  cards: string[]
-}
+const Carousel = () => {
 
-const Carousel = (props: Cards) => {
+  const { theme } = useContext(ThemeContext)
 
   // setting the image to props.cards[0] (first image)
   const [atualCard, setAtualCard] = useState(0)
@@ -48,15 +47,17 @@ const Carousel = (props: Cards) => {
     return () => window.removeEventListener("resize", updateLayout);
   }, [])
 
+  const cards = [`${card1}`, `${card2}`, `${card3}`]
+
   // i was noticing a delay between images, so that loop will load them before they are rendered
-  for (const card of props.cards) {
+  for (const card of cards) {
     const imageElement = new Image();
     imageElement.src = card;
   }
 
   // if we try to go to the "next" image after the last one, we go back to the first image
   const next = (): void => {
-    if (atualCard === props.cards.length - 1) {
+    if (atualCard === cards.length - 1) {
       setAtualCard(0)
     } else {
       setAtualCard(atualCard + 1)
@@ -93,9 +94,6 @@ const Carousel = (props: Cards) => {
         // if screen width <= 730
         <div id="media-my-work">
           <p>You can click on the images to see more</p>
-
-          /* for each card(item), an anchor with the image is rendered */ 
-
           {(props.cards).map((item: string, i: number) =>
             <a href={texts[i].link} target="_blank">
               <img src={item} alt={texts[i].alt} className="work-image" draggable="false"></img>
