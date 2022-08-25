@@ -14,7 +14,7 @@ export const ThemeContext = React.createContext({} as ITheme)
 
 const Home = () => {
 
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('night')
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
