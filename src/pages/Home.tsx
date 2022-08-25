@@ -3,7 +3,7 @@ import Presentation from '../components/home/Presentation/Presentation'
 import AboutMe from '../components/home/AboutMe/AboutMe'
 import Footer from '../components/home/Footer/Footer'
 import React, { useState } from 'react'
-import Carousel from '../components/home/MyWork/Carousel'
+import Carousel from '../components/home/Carousel/Carousel'
 
 interface ITheme {
   theme: string
@@ -14,7 +14,7 @@ export const ThemeContext = React.createContext({} as ITheme)
 
 const Home = () => {
 
-  const [theme, setTheme] = useState('night')
+  const [theme, setTheme] = useState('dark')
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

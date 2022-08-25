@@ -12,6 +12,9 @@ const Menu = () => {
 
     const { theme, setTheme } = useContext(ThemeContext)
 
+    const imageElement = new Image();
+    imageElement.src = night
+
     const toggle = (): void => {
         if (toggleVisible === false) {
             setToggleVisible(true)
