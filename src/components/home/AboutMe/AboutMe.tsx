@@ -25,7 +25,7 @@ const AboutMe = () => {
                             I'm currently expanding my knowledge of React.js and Typescript.
                             Scroll down to see some of my projects!
                         </p>
-                        <p id='comment'>{' (some of them are on default HTML/JS, and will be migrated over time)'}</p>
+                        <p>{' (some of them are on default HTML/JS, and will be migrated over time)'}</p>
                     </div>
                 </div>
             </div>
