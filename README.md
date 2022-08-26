@@ -49,12 +49,6 @@ const Carousel = () => {
 
   const cards = [`${card1}`, `${card2}`, `${card3}`]
 
-  // i was noticing a delay between images, so that loop will load them before they are rendered
-  for (const card of cards) {
-    const imageElement = new Image();
-    imageElement.src = card;
-  }
-
   // if we try to go to the "next" image after the last one, we go back to the first image
   const next = (): void => {
     if (atualCard === cards.length - 1) {
@@ -75,7 +69,14 @@ const Carousel = () => {
 
   return (
       <div>
-      // if screen width > 730
+      
+      // i was noticing a delay between images, so these links will pre render them
+      
+      <link rel="preload" href={weather} as="image" />
+      <link rel="preload" href={pokedex} as="image" />
+      <link rel="preload" href={portfolio} as="image" />
+
+      // if screen width >= 730
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">
