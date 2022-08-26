@@ -76,7 +76,7 @@ const Carousel = () => {
       <link rel="preload" href={pokedex} as="image" />
       <link rel="preload" href={portfolio} as="image" />
 
-      // if screen width > 730
+      // if screen width >= 730
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">
