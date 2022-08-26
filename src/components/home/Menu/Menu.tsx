@@ -9,7 +9,6 @@ const Menu = () => {
 
     const [toggleButton, setToggleButton] = useState('')
     const [toggleVisible, setToggleVisible] = useState(false)
-
     const { theme, setTheme } = useContext(ThemeContext)
 
     const toggle = (): void => {
