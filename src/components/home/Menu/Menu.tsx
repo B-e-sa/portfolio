@@ -12,12 +12,12 @@ const Menu = () => {
     const { theme, setTheme } = useContext(ThemeContext)
 
     const toggle = (): void => {
-        if (toggleVisible === false) {
-            setToggleVisible(true)
-            setToggleButton('rotate(90deg)')
-        } else {
+        if (toggleVisible) {
             setToggleVisible(false)
             setToggleButton('')
+        } else {
+            setToggleVisible(true)
+            setToggleButton('rotate(90deg)')
         }
     }
 

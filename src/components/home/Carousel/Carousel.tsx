@@ -8,6 +8,8 @@ import pokedex from '../../../assets/projects/pokedex.png'
 import portfolio from '../../../assets/projects/portfolio.png'
 import { ThemeContext } from "../../../pages/Home"
 
+const cards = [`${weather}`, `${pokedex}`, `${portfolio}`]
+
 const Carousel = () => {
 
   const { theme } = useContext(ThemeContext)
@@ -23,8 +25,6 @@ const Carousel = () => {
     window.addEventListener("resize", updateLayout)
     return () => window.removeEventListener("resize", updateLayout);
   }, [])
-
-  const cards = [`${weather}`, `${pokedex}`, `${portfolio}`]
 
   const next = (): void => {
     if (atualCard === cards.length - 1) {
@@ -44,9 +44,11 @@ const Carousel = () => {
 
   return (
     <div>
+      
       <link rel="preload" href={weather} as="image" />
       <link rel="preload" href={pokedex} as="image" />
       <link rel="preload" href={portfolio} as="image" />
+
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">
