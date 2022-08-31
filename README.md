@@ -2,7 +2,7 @@
 
 ### Link:
 
-## https://b-e-sa.surge.sh
+## https://b-e-sa.surge.sh <br> or <br> https://b-e-sa.netlify.app 
 
 ### **Installation:**
 
