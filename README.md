@@ -10,17 +10,18 @@
 
 ### **To Start Server:**
 
-`` cd weather-project ``
+`` cd weather-project `` <br>
 `` npm run dev ``
 
 To visit the app, use the **local** adress provided by Vite on the **terminal**
 
 ## Why did i use React-Router and useContext (on theme change)?
-Well... for study purposes!
+This a single page app, but for possible page adding, there is a prepareted Router. <br>
+I could just use one prop for every component, without prop drilling, but useContext was a simple and clean way to reach the same goal
 
 # How it works?
 I didn't comment on the code, to leave it cleaner on github <br>
-But i will explain every complex component one by one!
+But i will explain the most ""complex"" component
 
 ### Carousel
 
