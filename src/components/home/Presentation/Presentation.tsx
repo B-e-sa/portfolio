@@ -11,8 +11,11 @@ const Presentation = () => {
     return (
         <div id='presentation'>
             <div id='presentation-container'>
-                <div id='cat' style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)"}}>
-                    <img src={cat}  alt="cat-body" id='cat-body' draggable='false' />
+
+                {/* if light theme, set app background color to white, else, black */}
+
+                <div id='cat' style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}>
+                    <img src={cat} alt="cat-body" id='cat-body' draggable='false' />
                     <img src={tail} alt="cat-tail" id='cat-tail' draggable='false' />
                 </div>
                 <div id='my-name'>
