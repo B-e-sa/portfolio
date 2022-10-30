@@ -1,18 +1,28 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, JSXElementConstructor, ReactElement, ReactFragment } from "react"
 import "./Carousel.css"
 import texts from "./carouselTexts"
 import leftArrow from "../../../assets/buttons/left-arrow.png"
 import rightArrow from "../../../assets/buttons/right-arrow.png"
 import weather from '../../../assets/projects/weather-project.png'
 import pokedex from '../../../assets/projects/pokedex.png'
+import arpeggio from '../../../assets/projects/arpeggio.png'
 import portfolio from '../../../assets/projects/portfolio.png'
 import { ThemeContext } from "../../../pages/Home"
+import usePreload from "../../../hooks/usePreload"
 
-const cards = [`${weather}`, `${pokedex}`, `${portfolio}`]
+const cards = [
+  weather,
+  pokedex,
+  portfolio,
+  arpeggio
+]
+
 
 const Carousel = () => {
 
   const { theme } = useContext(ThemeContext)
+
+  const preloads = usePreload(cards)
 
   const [atualCard, setAtualCard] = useState(0)
   const [layoutWidth, setLayoutWidth] = useState(window.innerWidth > 730)
@@ -44,11 +54,7 @@ const Carousel = () => {
 
   return (
     <div>
-      
-      <link rel="preload" href={weather} as="image" />
-      <link rel="preload" href={pokedex} as="image" />
-      <link rel="preload" href={portfolio} as="image" />
-
+      {preloads}
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">

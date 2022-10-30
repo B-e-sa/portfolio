@@ -4,12 +4,15 @@ import menu from '../../../assets/buttons/menu.svg'
 import night from '../../../assets/buttons/night.svg'
 import day from '../../../assets/buttons/day.svg'
 import { ThemeContext } from '../../../pages/Home'
+import usePreload from '../../../hooks/usePreload' 
 
 const Menu = () => {
 
     const [toggleButton, setToggleButton] = useState('')
     const [toggleVisible, setToggleVisible] = useState(false)
     const { theme, setTheme } = useContext(ThemeContext)
+
+    const preload = usePreload([night, day, menu])
 
     const toggle = (): void => {
         if (toggleVisible) {
@@ -31,8 +34,7 @@ const Menu = () => {
 
     return (
         <div id='side-bar'>
-            <link rel="preload" href={night} as="image" />
-            <link rel="preload" href={menu} as="image" />
+            {preload}
             <div id='menu'>
                 <img
                     id='theme-icon'
