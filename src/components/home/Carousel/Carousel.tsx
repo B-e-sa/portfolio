@@ -8,7 +8,7 @@ import pokedex from '../../../assets/projects/pokedex.png'
 import arpeggio from '../../../assets/projects/arpeggio.png'
 import portfolio from '../../../assets/projects/portfolio.png'
 import { ThemeContext } from "../../../pages/Home"
-import usePreload from "../../../hooks/usePreload"
+import getPreloaders from "../../../utils/getPreloaders"
 
 const cards = [
   weather,
@@ -22,7 +22,7 @@ const Carousel = () => {
 
   const { theme } = useContext(ThemeContext)
 
-  const preloads = usePreload(cards)
+  const preloads = getPreloaders(cards)
 
   const [atualCard, setAtualCard] = useState(0)
   const [layoutWidth, setLayoutWidth] = useState(window.innerWidth > 730)

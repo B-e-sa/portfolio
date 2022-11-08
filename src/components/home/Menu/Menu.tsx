@@ -4,7 +4,7 @@ import menu from '../../../assets/buttons/menu.svg'
 import night from '../../../assets/buttons/night.svg'
 import day from '../../../assets/buttons/day.svg'
 import { ThemeContext } from '../../../pages/Home'
-import usePreload from '../../../hooks/usePreload' 
+import getPreloaders from '../../../utils/getPreloaders'
 
 const Menu = () => {
 
@@ -12,7 +12,7 @@ const Menu = () => {
     const [toggleVisible, setToggleVisible] = useState(false)
     const { theme, setTheme } = useContext(ThemeContext)
 
-    const preload = usePreload([night, day, menu])
+    const preload = getPreloaders([night, day, menu])
 
     const toggle = (): void => {
         if (toggleVisible) {
