@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext, JSXElementConstructor, ReactElement, ReactFragment } from "react"
 import "./Carousel.css"
-import texts from "./carouselTexts"
+import texts from "../../../utils/carouselTexts"
 import leftArrow from "../../../assets/buttons/left-arrow.png"
 import rightArrow from "../../../assets/buttons/right-arrow.png"
 import weather from '../../../assets/projects/weather-project.png'
@@ -16,7 +16,6 @@ const cards = [
   portfolio,
   arpeggio
 ]
-
 
 const Carousel = () => {
 
@@ -58,11 +57,29 @@ const Carousel = () => {
       {layoutWidth ?
         <div id="carousel-container">
           <div id="carousel-imgs">
-            <img src={leftArrow} style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }} onClick={before} className="arrow non-draggable" alt="left-arrow" />
+            <img
+              src={leftArrow}
+              style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}
+              onClick={before}
+              className="arrow non-draggable"
+              alt="left-arrow"
+            />
             <a href={texts[atualCard].link} target="_blank">
-              <img src={cards[atualCard]} className="work-image" alt={texts[atualCard].alt} width="280" height="376" />
+              <img
+                src={cards[atualCard]}
+                className="work-image"
+                alt={texts[atualCard].alt}
+                width="280"
+                height="376"
+              />
             </a>
-            <img src={rightArrow} style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }} onClick={next} className="arrow non-draggable" alt="right-arrow" />
+            <img
+              src={rightArrow}
+              style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}
+              onClick={next}
+              className="arrow non-draggable"
+              alt="right-arrow"
+            />
           </div>
           <div id="carousel-info">
             <h1>{texts[atualCard].title}</h1>
