@@ -1,4 +1,8 @@
-import { useState, useEffect, useContext, JSXElementConstructor, ReactElement, ReactFragment } from "react"
+import {
+  useState,
+  useEffect,
+  useContext
+} from "react"
 import "./Carousel.css"
 import texts from "../../../utils/carouselTexts"
 import leftArrow from "../../../assets/buttons/left-arrow.png"
@@ -91,7 +95,12 @@ const Carousel = () => {
           <p>You can click on the images to see more</p>
           {(cards).map((item: string, i: number) =>
             <a href={texts[i].link} target="_blank" key={item}>
-              <img src={item} alt={texts[i].alt} className="work-image" width="280" height="376"></img>
+              <img
+                src={item}
+                alt={texts[i].alt}
+                className="work-image"
+                width="280"
+                height="376"></img>
             </a>
           )}
         </div>
