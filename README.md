@@ -10,7 +10,6 @@
 
 ### **To Start Server:**
 
-`` cd weather-project `` <br>
 `` npm run dev ``
 
 To visit the app, use the **local** adress provided by Vite on the **terminal**
