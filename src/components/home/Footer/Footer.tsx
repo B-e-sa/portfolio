@@ -10,12 +10,15 @@ const Footer = () => {
 
     return (
         <footer>
-            <nav id="logos-container" style={{ filter:  theme === 'light' ? "invert(100%)" : "invert(0%)"}}>
+            <nav
+                id="logos-container"
+                style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}
+            >
                 <a href="https://www.linkedin.com/in/joão-antônio-pereira-b4021b232/" target='_blank'>
-                    <img src={linkedin} id="linkedin" alt="linkedin-link" width="45px" height="45px"/>
+                    <img src={linkedin} id="linkedin" alt="linkedin-link" width="45px" height="45px" />
                 </a>
                 <a href="https://github.com/B-e-sa" target='_blank'>
-                    <img src={git} id="github" alt="github-link" width="45px" height="45px"/>
+                    <img src={git} id="github" alt="github-link" width="45px" height="45px" />
                 </a>
             </nav>
         </footer>

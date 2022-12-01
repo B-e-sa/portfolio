@@ -39,7 +39,7 @@ const Menu = () => {
                 <img
                     id='theme-icon'
                     className='non-draggable'
-                    src={ theme === 'light' ? night : day}
+                    src={theme === 'light' ? night : day}
                     width="35px"
                     height="25px"
                     alt="set theme"
@@ -55,18 +55,14 @@ const Menu = () => {
                     style={{ transform: toggleButton, filter: theme === 'light' ? 'invert(0%)' : 'invert(100%)' }}
                 />
             </div>
-            {toggleVisible ?
+            {toggleVisible &&
                 <nav id='side-bar-navigation'>
                     <p><a href='#about-me-container'>About me</a></p>
                     <p><a href="#my-work">Projects</a></p>
-                    <p><a href="https://www.linkedin.com/in/joão-antônio-pereira-b4021b232/" target={'_blank'}>LinkedIn</a></p>
+                    <p><a href="https://www.linkedin.com/in/joão-antônio-pereira-b4021b232/" target='blank'>LinkedIn</a></p>
                     <p><a href="https://github.com/B-e-sa" target='blank'>GitHub</a></p>
                     <p><a href="mailto:joaospereira963@gmail.com">Contact me</a></p>
-                    <p><a href="https://www.svgrepo.com" target='blank'>Icons</a></p>
-                </nav>
-                :
-                <></>
-            }
+                </nav>}
         </div>
     )
 }
