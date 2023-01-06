@@ -44,6 +44,7 @@
 }
 
 #about-info p:nth-child(3) {
-    font-size: 18pt;
+    color: rgb(112, 103, 103);
+    font-size: 14pt;
     margin-bottom: 10px;
 }

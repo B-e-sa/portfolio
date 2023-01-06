@@ -1,6 +1,6 @@
 import './AboutMe.css'
 import devCat from '../../../assets/cats/dev-cat.png'
-import ligth from '../../../assets/cats/light.png'
+import light from '../../../assets/cats/light.png'
 import { useContext } from 'react'
 import { ThemeContext } from '../../../pages/Home'
 
@@ -18,7 +18,7 @@ const AboutMe = () => {
                 >
                     <img
                         id='light'
-                        src={ligth}
+                        src={light}
                         alt="light-bulb"
                         className='non-draggable'
                     />
@@ -34,15 +34,13 @@ const AboutMe = () => {
                     <div>
                         <p>
                             Hi! Im João, a Computer Science student
-                            and self-taught front-end developer.
+                            and self-taught full-stack developer.
                         </p>
                         <p>
-                            I'm currently expanding my knowledge of React.js and Typescript.
+                            I'm currently expanding my knowledge of Angular and Vue.
                             Scroll down to see some of my projects!
                         </p>
-                        <p>{
-                            ' (some of them are on default HTML/JS, and will be migrated over time)'
-                        }</p>
+                        <p>{' (some of them are on default HTML/JS, and will be migrated over time)'}</p>
                     </div>
                 </div>
             </div>

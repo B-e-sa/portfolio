@@ -27,7 +27,7 @@ const Carousel = () => {
 
   const preloads = getPreloaders(cards)
 
-  const [atualCard, setAtualCard] = useState(0)
+  const [currentCard, setCurrentCard] = useState(0)
   const [layoutWidth, setLayoutWidth] = useState(window.innerWidth > 730)
 
   const updateLayout = (): void => {
@@ -40,19 +40,13 @@ const Carousel = () => {
   }, [])
 
   const next = (): void => {
-    if (atualCard === cards.length - 1) {
-      setAtualCard(0)
-    } else {
-      setAtualCard(atualCard + 1)
-    }
+    currentCard === cards.length - 1 ?
+      setCurrentCard(0) : setCurrentCard(currentCard + 1)
   }
 
   const before = (): void => {
-    if (atualCard === 0) {
-      setAtualCard(cards.length - 1)
-    } else {
-      setAtualCard(atualCard - 1)
-    }
+    currentCard === 0 ?
+      setCurrentCard(cards.length - 1) : setCurrentCard(currentCard - 1)
   }
 
   return (
@@ -63,31 +57,31 @@ const Carousel = () => {
           <div id="carousel-imgs">
             <img
               src={leftArrow}
-              style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}
+              style={theme === 'light' ? { filter: "invert(100%)" } : {}}
               onClick={before}
               className="arrow non-draggable"
               alt="left-arrow"
             />
-            <a href={texts[atualCard].link} target="_blank">
+            <a href={texts[currentCard].link} target="_blank">
               <img
-                src={cards[atualCard]}
+                src={cards[currentCard]}
                 className="work-image"
-                alt={texts[atualCard].alt}
+                alt={texts[currentCard].alt}
                 width="280"
                 height="376"
               />
             </a>
             <img
               src={rightArrow}
-              style={{ filter: theme === 'light' ? "invert(100%)" : "invert(0%)" }}
+              style={theme === 'light' ? { filter: "invert(100%)" } : {}}
               onClick={next}
               className="arrow non-draggable"
               alt="right-arrow"
             />
           </div>
           <div id="carousel-info">
-            <h1>{texts[atualCard].title}</h1>
-            <p>{texts[atualCard].text}</p>
+            <h1>{texts[currentCard].title}</h1>
+            <p>{texts[currentCard].text}</p>
           </div>
         </div>
         :

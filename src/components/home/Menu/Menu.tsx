@@ -12,7 +12,7 @@ const Menu = () => {
     const [toggleVisible, setToggleVisible] = useState(false)
     const { theme, setTheme } = useContext(ThemeContext)
 
-    const preload = getPreloaders([night, day, menu])
+    const preloads = getPreloaders([night, day, menu])
 
     const toggle = (): void => {
         if (toggleVisible) {
@@ -25,16 +25,13 @@ const Menu = () => {
     }
 
     const changeTheme = (): void => {
-        if (theme === 'light') {
-            setTheme('nigth')
-        } else {
-            setTheme('light')
-        }
+        theme === 'light' ?
+            setTheme('night') : setTheme('light')
     }
 
     return (
         <div id='side-bar'>
-            {preload}
+            {preloads}
             <div id='menu'>
                 <img
                     id='theme-icon'
@@ -44,7 +41,7 @@ const Menu = () => {
                     height="25px"
                     alt="set theme"
                     onClick={changeTheme}
-                    style={{ filter: theme === 'light' ? 'invert(0%)' : 'invert(100%)' }}
+                    style={theme !== 'light' ? { filter: 'invert(100%)' } : {}}
                 />
                 <img
                     src={menu}
@@ -58,7 +55,7 @@ const Menu = () => {
             {toggleVisible &&
                 <nav id='side-bar-navigation'>
                     <p><a href='#about-me-container'>About me</a></p>
-                    <p><a href="#my-work">Projects</a></p>
+                    <p><a href="#carousel-container">Projects</a></p>
                     <p><a href="https://www.linkedin.com/in/joão-antônio-pereira-b4021b232/" target='blank'>LinkedIn</a></p>
                     <p><a href="https://github.com/B-e-sa" target='blank'>GitHub</a></p>
                     <p><a href="mailto:joaospereira963@gmail.com">Contact me</a></p>
