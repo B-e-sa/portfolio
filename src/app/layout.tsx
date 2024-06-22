@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { link } from "fs";
-import Email from "@/app/components/icons/social/Email";
-import LinkedIn from "@/app/components/icons/social/LinkedIn";
-import GitHub from "@/app/components/icons/social/GitHub";
+import Email from "@/app/components/icons/social/emai";
 import React from "react";
-import Link from "next/link";
 import Navbar from "./components/navbar";
+import LinkedIn from "./components/icons/social/linkedin";
+import GitHub from "./components/icons/social/github";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +17,17 @@ export const metadata: Metadata = {
 const social = [
   {
     title: "GitHub",
-    icon: <GitHub />,
+    Icon: GitHub,
     link: ""
   },
   {
     title: "LinkedIn",
-    icon: <LinkedIn />,
+    Icon: LinkedIn,
     link: ""
   },
   {
     title: "Email",
-    icon: <Email />,
+    Icon: Email,
     link: ""
   },
 ]
@@ -42,12 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " bg-black flex items-center justify-center h-screen"}>
-        <div className="mr-5 p-3 flex flex-col justify-between items-center w-[184px] h-[611px] bg-default">
+        <div className="mr-5 p-3 flex flex-col justify-between items-center w-[194px] h-[611px] bg-default">
           <div className="flex justify-between w-[80%] mt-3">
-            {social.map(({ icon, link, title }) => {
+            {social.map(({ Icon, link, title }) => {
               return (
                 <a key={title} href={link} target="_blank">
-                  {React.cloneElement(icon, { className: "fill-secondary h-[20px] w-[20px]" })}
+                  <Icon className="fill-secondary h-[20px] w-[20px]" />
                 </a>
               )
             })}
@@ -55,7 +53,7 @@ export default function RootLayout({
           <Navbar />
           <p className="text-xs">João Pereira, All Rights Reserved</p>
         </div>
-        <div className="bg-default w-[532px] h-[611px]">
+        <div className="bg-default w-[667px] h-[611px]">
           {children}
         </div>
       </body>
